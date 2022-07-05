@@ -21,7 +21,7 @@ const getAllProducts = async (req,res) =>{
         queryObject.company = company
     }
     if(name){
-        queryObject.name = name
+        queryObject.name = {$regex:name,$options:'1'}
     }
     // if featured is false ,we gat all the data
     console.log(queryObject)
